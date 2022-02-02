@@ -77,7 +77,7 @@ RUN set -ex \
 	&& rm -rf /var/lib/apt/lists/*
 
 RUN set -ex \
-	&& curl -s https://bootstrap.pypa.io/get-pip.py | python3.6 \
+	&& curl -s https://bootstrap.pypa.io/pip/3.6/get-pip.py | python3.6 \
 	&& update-alternatives --install /usr/bin/python python /usr/bin/python3 10
 
 RUN pip3 install -q -r /src/requirements/production-py3.txt -r /src/requirements/test-py3.txt
