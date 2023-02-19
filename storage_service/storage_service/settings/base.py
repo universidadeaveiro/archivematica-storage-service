@@ -538,7 +538,7 @@ if OIDC_AUTHENTICATION:
     ALLOW_USER_EDITS = False
 
     AUTHENTICATION_BACKENDS += ["common.backends.CustomOIDCBackend"]
-    LOGIN_EXEMPT_URLS.append(r"^oidc")
+    LOGIN_EXEMPT_URLS + (r"^oidc",)
     INSTALLED_APPS += ["mozilla_django_oidc"]
 
     # AUTH_SERVER = 'https://login.microsoftonline.com/common/v2.0/'
